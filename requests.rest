@@ -1,0 +1,13 @@
+// authorization token can be use across different servers
+
+GET http://localhost:4000/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiUGxheWVyMiIsImlhdCI6MTY0Nzg5MDE4Nn0.zLR25B3LTzyZ-U1ZMRdiw7UP_cdVp5cFUaoUwO_ctUE
+
+###
+
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+  "username": "Player2"
+}
