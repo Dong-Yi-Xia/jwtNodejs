@@ -1,13 +1,33 @@
 // authorization token can be use across different servers
-
-GET http://localhost:4000/posts
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiUGxheWVyMiIsImlhdCI6MTY0Nzg5MDE4Nn0.zLR25B3LTzyZ-U1ZMRdiw7UP_cdVp5cFUaoUwO_ctUE
+// GET POST
+GET http://localhost:3000/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiUGxheWVyMSIsImlhdCI6MTY0Nzg5NDE2NCwiZXhwIjoxNjQ3ODk0MTg0fQ.Pc8QD40sesYqlyxxz0QQzi2rQM8oqukPN8HbOczYCow
 
 ###
-
-POST http://localhost:3000/login
+// GET REFRESH TOKEN
+POST http://localhost:4000/token
 Content-Type: application/json
 
 {
-  "username": "Player2"
+  "token":
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiUGxheWVyMSIsImlhdCI6MTY0Nzg5NDU4Nn0.yaQWEqpudiax2YnBdn8DvCv91htKEHoMy_ZOFxHmHrQ"
+}
+
+###
+// LOGGING IN
+POST http://localhost:4000/login
+Content-Type: application/json
+
+{
+  "username": "Player1"
+}
+
+###
+// LOGGING OUT
+DELETE http://localhost:4000/logout
+Content-Type: application/json
+
+{
+  "token":
+ "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiUGxheWVyMSIsImlhdCI6MTY0Nzg5NDU4Nn0.yaQWEqpudiax2YnBdn8DvCv91htKEHoMy_ZOFxHmHrQ"
 }
